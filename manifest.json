@@ -1,0 +1,14 @@
+{
+    "name": "Disappointed Study Helper",
+    "description": "This extension will help you study",
+    "version": "0.1.0",
+    "manifest_version": 3,
+    "action":{
+        "default_popup": "EquivalenceCalc.html"
+    },
+    "content_scripts": [{
+        "matches": ["<all_urls>"],
+        "css": ["styles.css"]
+      }
+    ]
+}

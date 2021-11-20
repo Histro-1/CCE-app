@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="styles.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <!-- V1: <span id="t1"></span> Unit1: <span id="u1"></span> type1: <span id="type1"></span> <br>
+        V2: <span id="t2"></span> Unit1: <span id="u1"></span> type2: <span id="type2"></span>
+
+        Series: <span id="seriesAns"></span>
+        Parallel: <span id="parallelAns"></span> -->
+        
+       <select id="type1" name="type"> <!--type-->
+            <option value="R">Resistor</option>
+            <option value="C">Capacitor</option>
+            <option value="L">Inductor</option>
+            </select> 
+
+        V1: <input type="number" id="t1"></input><!--value-->
+
+        <select id="u1" name="Unit1"> <!--units-->
+            <option value="6">Mega</option>
+            <option value="3">Kilo</option>
+            <option value="0">unit</option>
+            <option value="-3">milli</option>
+            <option value="-6">micro</option>
+            <option value="-9">nano</option>
+            <option value="-12">pico</option>
+            <option value="-15">femto</option>
+            </select> 
+        
+
+        V2: <input type="number" id="t2"></input>  <!--value-->
+
+         Unit1: <select id="u2" name="Unit2"> <!--units-->
+            <option value="6">Mega</option>
+            <option value="3">Kilo</option>
+            <option value="0">unit</option>
+            <option value="-3">milli</option>
+            <option value="-6">micro</option>
+            <option value="-9">nano</option>
+            <option value="-12">pico</option>
+            <option value="-15">femto</option>
+            </select> 
+       
+
+        Series: <span id="seriesAns"> </span>
+        Parallel: <span id="parallelAns"> </span>
+
+        <button id="btnFindME">Calculate</button>
+
+        
+    </div>
+</body>
+<script src="EquivalentResistance.js"></script>
+</html>
