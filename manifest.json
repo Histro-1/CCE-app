@@ -1,6 +1,6 @@
 {
-    "name": "Disappointed Study Helper",
-    "description": "This extension will help you study",
+    "name": "Parallel-Series calculator",
+    "description": "Now you can 'extend' your time to things other than parallel and series calculations... see what I did there :)",
     "version": "0.1.0",
     "manifest_version": 3,
     "action":{
@@ -10,5 +10,27 @@
         "matches": ["<all_urls>"],
         "css": ["styles.css"]
       }
-    ]
+    ],
+    "icons": [
+        {
+          "src": "images/icon_96.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        },
+        {
+          "src": "images/icon_128.png",
+          "sizes": "128x128",
+          "type": "image/png"
+        },
+        {
+          "src": "images/icon_144.png",
+          "sizes": "144x144",
+          "type": "image/png"
+        },
+        {
+          "src": "images/icon_192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
 }

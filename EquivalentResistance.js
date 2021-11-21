@@ -39,11 +39,11 @@ let btn = document.getElementById("btnFindME");
 // ---------------------------set web elements--------------------//
 function setElemValues(){
 
-    t1.value = parseInt(document.getElementById("t1").value);
-    t1.unitDegree = parseInt(document.getElementById("u1").value);
+    t1.value = parseFloat(document.getElementById("t1").value);
+    t1.unitDegree = parseFloat(document.getElementById("u1").value);
 
-    t2.value = parseInt(document.getElementById("t2").value);
-    t2.unitDegree = parseInt(document.getElementById("u2").value);
+    t2.value = parseFloat(document.getElementById("t2").value);
+    t2.unitDegree = parseFloat(document.getElementById("u2").value);
 
 
     let info = document.getElementById("info").value;
@@ -65,6 +65,9 @@ let getEquivalence =(t1,t2) =>{
     let unit = t1.unitName;
     [parallelEq,seriesEq] = getSum(a,b);
 
+    if (isNaN(parallelEq) || isNaN(seriesEq))
+        return[" "," "]
+
     let pEq = parallelEq.toFixed(2) + " "+unit;
     let sEq = seriesEq.toFixed(2) + " " +unit; 
     
@@ -81,14 +84,14 @@ let getEquivalence =(t1,t2) =>{
 function inverseSum(t1, t2){
     let ta = t1.value * Math.pow(10,t1.unitDegree)
     let tb = t2.value * Math.pow(10,t2.unitDegree)
-    console.log("inverseSum: ")
-    return Math.pow((1/ta) + (1/tb),-1)/formater(t1,t2)
+    console.log(t1.unitDegree +" " + 1/ta)
+    return Math.pow((1/ta) + (1/tb),-1)
 }
 function Sum(t1, t2){
     let ta = t1.value * Math.pow(10,t1.unitDegree)
     let tb = t2.value * Math.pow(10,t2.unitDegree)
 
-    return (ta + tb)/formater(t1,t2)
+    return (ta + tb)
 }
 function getSum(a, b){
     let p;
@@ -108,18 +111,7 @@ function getSum(a, b){
     }
     return [p,s]
 }
-function formater(t1,t2){
-    let a = t1.unitDegree
-    let b = t2.unitDegree
-
-    let minimum = (a,b) =>{
-        return a==b?a:a<b?a:b;
-    }
-
-    console.log("formater: " + Math.pow(10,minimum(a,b)));
-
-    return Math.pow(10,minimum(a,b))
-}                   
+                  
 
 btn.onclick = () =>{
   ans = [seriesAns.innerHTML, parallelAns.innerHTML] =  getEquivalence(t1,t2);
