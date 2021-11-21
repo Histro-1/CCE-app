@@ -5,28 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles.css" rel="stylesheet">
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
     <title>Document</title>
+    
+
 </head>
 <body>
-    <div>
+    
+    <main>
         <!-- V1: <span id="t1"></span> Unit1: <span id="u1"></span> type1: <span id="type1"></span> <br>
         V2: <span id="t2"></span> Unit1: <span id="u1"></span> type2: <span id="type2"></span>
 
         Series: <span id="seriesAns"></span>
         Parallel: <span id="parallelAns"></span> -->
-        
-       <select id="type1" name="type"> <!--type-->
-            <option value="R">Resistor</option>
-            <option value="C">Capacitor</option>
-            <option value="L">Inductor</option>
+
+       <select id="info" name="type"> <!--type-->
+            <option value="R-Ohms">Resistor</option>
+            <option value="C-Farads">Capacitor</option>
+            <option value="L-Henrys">Inductor</option>
             </select> 
-
-        V1: <input type="number" id="t1"></input><!--value-->
-
-        <select id="u1" name="Unit1"> <!--units-->
+            <br>
+        Elem1: <input type="number" id="t1"></input><!--value-->
+            <select id="u1" name="Unit1"> <!--units-->
+            <option value="0">unit</option>
             <option value="6">Mega</option>
             <option value="3">Kilo</option>
-            <option value="0">unit</option>
             <option value="-3">milli</option>
             <option value="-6">micro</option>
             <option value="-9">nano</option>
@@ -34,13 +42,13 @@
             <option value="-15">femto</option>
             </select> 
         
+            <br>
+        Elem2: <input type="number" id="t2"></input>  <!--value-->
 
-        V2: <input type="number" id="t2"></input>  <!--value-->
-
-         Unit1: <select id="u2" name="Unit2"> <!--units-->
+         <select id="u2" name="Unit2"> <!--units-->
+            <option value="0">unit</option>
             <option value="6">Mega</option>
             <option value="3">Kilo</option>
-            <option value="0">unit</option>
             <option value="-3">milli</option>
             <option value="-6">micro</option>
             <option value="-9">nano</option>
@@ -48,14 +56,20 @@
             <option value="-15">femto</option>
             </select> 
        
+      <div id="answers">
+        <li>Series: <span id="seriesAns"> </span></li>
+        <li>Parallel: <span id="parallelAns"> </span> 
+      </div>
 
-        Series: <span id="seriesAns"> </span>
-        Parallel: <span id="parallelAns"> </span>
 
-        <button id="btnFindME">Calculate</button>
+        <button id="btnFindME" class="mdc-button foo-button">
+            <div class="mdc-button__ripple"></div>
+        <span class="mdc-button__label">Calculate</span>
+        </button>
 
         
-    </div>
+      </main>
 </body>
 <script src="EquivalentResistance.js"></script>
+
 </html>
