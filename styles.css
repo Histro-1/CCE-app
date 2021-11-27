@@ -2,17 +2,17 @@
     padding: 0px;
     margin: 0px;
 }
-main{
+main#Hackathon{
     display: block;
 }
-body{
+body {
     margin: auto;
     height:100%;
     width:100%;
     padding: 15px; 
     text-align: center;  
 }
-main{
+main#Hackathon{
     width:250px;
     text-align: center;
     background-color: rgb(240, 158, 229);
